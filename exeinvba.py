@@ -24,11 +24,21 @@ else: sys.exit(0)
 def formStr(varstr, instr):
  holder = []
  str2 = ''
- str1 = '\r\n' + varstr + ' = "' + instr[:1007] + '"' 
- for i in xrange(1007, len(instr), 1001):
- 	holder.append(varstr + ' = '+ varstr +' + "'+instr[i:i+1001])
+ str1 = '\r\n' + varstr + ' = "' + instr[:1003] + '"' 
+ for i in xrange(1003, len(instr), 997):
+ 	holder.append(varstr + ' = '+ varstr +' + "'+instr[i:i+997])
  	str2 = '"\r\n'.join(holder)
  
+ ### Filesize should allow ~65mb, but string length still creates too many lines when vars get to 3 digit numbers
+ ### With the above code I have gotten variables of 3 digits to work with a file of roughly 50mb.
+ ### Further testing can be done of course. Orginal code below
+
+# str1 = '\r\n' + varstr + ' = "' + instr[:1007] + '"' 
+# for i in xrange(1007, len(instr), 1001):
+# 	holder.append(varstr + ' = '+ varstr +' + "'+instr[i:i+1001])
+# 	str2 = '"\r\n'.join(holder)
+
+
  str2 = str2 + "\""
  str1 = str1 + "\r\n"+str2
  return str1
