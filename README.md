@@ -12,6 +12,10 @@ python macro_safe.py test.bat test.txt
 python exeinvba.py --exe test.exe --out test.vb [--dest "C:\\Users\\Public\\Documents\\test.exe"]
 Ensure any backslashes are escaped in the dest variable
 
+2a. exeinvbabuild.py
+
+   Exactly what exeinvba.py does, just in a builder form and allows both MS Excel and MS Word
+
 3. macro_safe_old.py
 
    Same as macro_safe.py, just uses powershell vice VB for architecture detection to call the correct version of powershell.
