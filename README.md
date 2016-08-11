@@ -12,15 +12,15 @@ python macro_safe.py test.bat test.txt
 python exeinvba.py --exe test.exe --out test.vb [--dest "C:\\Users\\Public\\Documents\\test.exe"]
 Ensure any backslashes are escaped in the dest variable
 
-2a. exeinvbabuild.py
+3. exeinvbabuild.py
 
    Exactly what exeinvba.py does, just in a builder form and allows both MS Excel and MS Word
 
-3. macro_safe_old.py
+4. macro_safe_old.py
 
    Same as macro_safe.py, just uses powershell vice VB for architecture detection to call the correct version of powershell.
 
-4. b64_enc.py
+5. b64_enc.py
 
    Watered down version of exeinvba.py that will output both the raw base64 string of the executable and the variable specific section of the VB.  May be useful for use with different VB templates or other methods that may require an executable passed as a base64 string somewhere.  Automatically stores output into base64_output.txt (raw) and base64_output.vb. Syntax is:
 python b64_enc.py test.exe
